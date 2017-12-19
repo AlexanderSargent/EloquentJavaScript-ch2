@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+ /*Note: I am trying to challenge myself and write two solutions differently.
+ I outpute with document.write and not console.log for ease of reading output.
+ The problem given is as follows:
+
+ Write a program that uses console.log to print all the numbers from 1 to 100,
+  with two exceptions. For numbers divisible by 3, print "Fizz" instead of the
+  number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.
+
+ When you have that working, modify your program to print "FizzBuzz", for numbers
+ that are divisible by both 3 and 5 (and still print "Fizz" or "Buzz" for
+ numbers divisible by only one of those).*/
+
+
+//FizzBuzz with a do-while loop and an if-else statment
+
+var numCount=0;
+
+do {
+    numCount++
+    if(numCount%3==0 && numCount%5==0){
+        document.write("FIZZBUZZ!" + "<br />");
+    } else if(numCount%3==0){
+        document.write("FIZZ" + "<br />");
+    } else if (numCount%5==0){
+        document.write("BUZZ" + "<br />");
+    } else {
+        document.write(numCount + "<br />");
+    }
+}while(numCount<100);
+document.write("<br />")
+
+
+
+//FizzBuzz with a for loop and a switch-case
+
+for(i=1;i<101;i++){
+  switch(true){
+    case (i%3==0 && i%5==0):
+      document.write("FIZZBUZZ!" + "<br />");
+      break;
+    case (i%3==0):
+      document.write("FIZZ" + "<br />");
+      break;
+    case (i%5==0):
+      document.write("BUZZ" + "<br />");
+      break;
+    default:
+      document.write(i +"<br />")
+      break;
+    }
+  }
+
+</script>
+</body>
+</html>

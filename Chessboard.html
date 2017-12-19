@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+  /*Write a program that creates a string that represents an 8×8 grid, using
+  newline characters to separate lines. At each position of the grid there is
+  either a space or a “#” character. The characters should form a chess board.
+
+  Passing this string to console.log should show something like this:
+
+   # # # #
+  # # # #
+   # # # #
+  # # # #
+   # # # #
+  # # # #
+   # # # #
+  # # # #
+  When you have a program that generates this pattern, define a variable
+  size = 8 and change the program so that it works for any size, outputting a
+  grid of the given width and height. */
+
+  /*Chessboard. Here I replaced the empty spaces with [] to try to make it a
+  little closer to looking like a board. Added a user prompt instead of
+  requiring a manual switch of the variable 'size', and a basic check for
+  valid numbers.*/
+
+  var size = prompt("Please enter a number for your prefered chessboard size.");
+  if(isNaN(size)==true || size<0==true){
+        size = prompt("Nice try. Please enter a NUMBER, that is positive and whole.");
+  } else {}
+
+
+  /*Here I begin creating the board. As I create a new line, I determine whether
+  the row is even or odd, as even rows start with a space, while odds start with
+  a #. I then run through the row upping the count everytime a new character is
+  inserted, breaking when the the column count(across) is equal to the desired size.
+  This is repeated until the row count(down) is also equal to size.*/
+  for(rowCount=0; rowCount<size; rowCount++){
+    switch(true){
+      case (rowCount%2==0):
+        for(columnCount=0; columnCount<size; columnCount++){
+          switch(true){
+            case (columnCount%2==0):
+              document.write("[ ]");
+              break;
+            default:
+              document.write(" # ");
+              break;
+          }
+        }
+        document.write("<br />");
+        break;
+      default:
+        for(columnCount=0;columnCount<size;columnCount++){
+          switch(true){
+            case (columnCount%2==0):
+              document.write(" # ");
+              break;
+            default:
+              document.write("[ ]");
+              break;
+          }
+       }
+       document.write("<br />");
+       break;
+  }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+  /*Write a loop that makes seven calls to console.log to output the following
+  triangle:
+
+  #
+  ##
+  ###
+  ####
+  #####
+  ######
+  #######
+  */
+
+  //First triangle with a do-while loop, output with document.write for ease
+	var buildingBlock = "#";
+	var blockCount = 0;
+
+	do {
+		document.write(buildingBlock + "<br />");
+		buildingBlock = buildingBlock + "#";
+		blockCount++;
+	}while (blockCount < 7);
+
+  document.write("<br />")
+
+
+
+  //Second triangle with a for loop
+  var buildingBlock2 = "#";
+  for(i=0;i<7;i++){
+    document.write(buildingBlock2 + "<br />");
+    buildingBlock2 += "#";
+  }
+  </script>
+</body>
+</html>
